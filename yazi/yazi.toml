@@ -1,0 +1,27 @@
+[[opener.set-wallpaper]]
+run  = 'set-wall "$1"'
+for  = "linux"
+desc = "Set as wallpaper"
+
+[[opener.zip]]
+run  = 'zip7 "$1"'
+for  = "linux"
+desc = "Contract here"
+
+[[opener.edit]]
+run = 'nvim "$1"'
+block = true
+for = "linux"
+desc = "Nvim"
+
+[[open.prepend_rules]]
+mime = "text/*"
+use = ["edit"]
+
+[[open.prepend_rules]]
+mime = "*/*"
+use  = ["open", "zip"]
+
+[[open.prepend_rules]]
+mime = "image/*"
+use  = ["open", "set-wallpaper"]

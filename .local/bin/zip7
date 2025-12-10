@@ -1,0 +1,8 @@
+#!/bin/bash
+# zip nhanh bằng 7z
+file="$1"
+base=$(basename "$file")
+name="${base%.*}"
+
+7z a -tzip "${name}.zip" "$file"
+
